@@ -34,5 +34,8 @@
     "prepublish": "gulp prepublish",
     "test": "gulp"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "object-leaves": "^1.0.0"
+  }
 }
