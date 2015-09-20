@@ -1,6 +1,6 @@
 {
   "name": "flatten-object-strict",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Flattens a nested object. Throws on collisions.",
   "homepage": "https://github.com/voltrevo/flatten-object-strict#readme",
   "repository": "voltrevo/flatten-object-strict",
