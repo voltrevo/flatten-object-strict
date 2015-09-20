@@ -6,6 +6,23 @@ var assert = require('assert');
 
 var flattenObjectStrict = require('../lib');
 
+var noThrow = function(fn) {
+  return function() {
+    var ret = {
+      error: undefined,
+      value: undefined
+    };
+
+    try {
+      ret.value = fn.apply(this, arguments);
+    } catch (e) {
+      ret.error = e;
+    }
+
+    return ret;
+  };
+};
+
 describe('flatten-object-strict', function() {
   it('an empty object produces an empty object', function() {
     assert.deepEqual(flattenObjectStrict({}), {});
@@ -59,6 +76,27 @@ describe('flatten-object-strict', function() {
         eleven: 11,
         fifteen: 15
       }
+    );
+  });
+
+  it('throws a helpful error message when there are duplicate keys', function() {
+    assert.deepEqual(
+      noThrow(flattenObjectStrict)({
+        foo: {
+          dup1: 1
+        },
+        bar: {
+          dup1: 13,
+          dup2: 281
+        },
+        baz: {
+          dup2: 38
+        }
+      }).error.message,
+      'Duplicate keys found: ' + JSON.stringify({
+        dup1: ['.foo.dup1', '.bar.dup1'],
+        dup2: ['.bar.dup2', '.baz.dup2']
+      }, null, 2)
     );
   });
 });
