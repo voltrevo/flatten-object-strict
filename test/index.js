@@ -20,4 +20,45 @@ describe('flatten-object-strict', function() {
       assert.deepEqual(flattenObjectStrict(flatObject), flatObject);
     });
   });
+
+  it('flattens an object with nesting', function() {
+    assert.deepEqual(
+      flattenObjectStrict({
+        one: 1,
+        two: {
+          three: 3,
+          four: 4
+        },
+        five: {
+          five: 5,
+          six: 6,
+          seven: {
+            eight: 8,
+            nine: 9,
+            ten: 10
+          },
+          eleven: 11,
+          twelve: {
+            thirteen: {
+              fourteen: {
+                fifteen: 15
+              }
+            }
+          }
+        }
+      }),
+      {
+        one: 1,
+        three: 3,
+        four: 4,
+        five: 5,
+        six: 6,
+        eight: 8,
+        nine: 9,
+        ten: 10,
+        eleven: 11,
+        fifteen: 15
+      }
+    );
+  });
 });
