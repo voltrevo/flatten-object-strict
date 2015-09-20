@@ -1,4 +1,4 @@
-# flatten-object-strict [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status](https://coveralls.io/repos/voltrevo/flatten-object-strict/badge.svg?branch=master&service=github)](https://coveralls.io/github/voltrevo/flatten-object-strict?branch=master)
+# flatten-object-strict [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status](https://coveralls.io/repos/voltrevo/flatten-object-strict/badge.svg?branch=master&service=github)](https://coveralls.io/github/voltrevo/flatten-object-strict?branch=master) [![Code Climate](https://codeclimate.com/github/voltrevo/flatten-object-strict/badges/gpa.svg)](https://codeclimate.com/github/voltrevo/flatten-object-strict)
 > Flattens a nested object. Throws on collisions.
 
 
