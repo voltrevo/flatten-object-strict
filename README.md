@@ -12,9 +12,46 @@ $ npm install --save flatten-object-strict
 ## Usage
 
 ```js
+'use strict';
+
 var flattenObjectStrict = require('flatten-object-strict');
 
-flattenObjectStrict('Rainbow');
+console.log(flattenObjectStrict({
+  foo: {
+    one: 1,
+    two: 2
+  },
+  bar: {
+    three: 3,
+    four: 4
+  }
+}))
+
+// { one: 1, two: 2, three: 3, four: 4 }
+
+console.log(flattenObjectStrict({
+  foo: {
+    dup1: 1
+  },
+  bar: {
+    dup1: 13,
+    dup2: 281
+  },
+  baz: {
+    dup2: 38
+  }
+}));
+
+// Error: Duplicate keys found: {
+//   "dup1": [
+//     ".foo.dup1",
+//     ".bar.dup1"
+//   ],
+//   "dup2": [
+//     ".bar.dup2",
+//     ".baz.dup2"
+//   ]
+// }
 ```
 
 ## License
