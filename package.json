@@ -1,0 +1,36 @@
+{
+  "name": "flatten-object-strict",
+  "version": "0.0.0",
+  "description": "Flattens a nested object. Throws on collisions.",
+  "homepage": "https://github.com/voltrevo/flatten-object-strict#readme",
+  "repository": "voltrevo/flatten-object-strict",
+  "author": {
+    "name": "Andrew Morris",
+    "email": "voltrevo@gmail.com",
+    "url": "http://andrewmorris.io/"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    "flatten",
+    "object",
+    "strict"
+  ],
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.9.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-nsp": "^0.4.5",
+    "gulp-coveralls": "^0.1.0"
+  },
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
+  "license": "MIT"
+}
